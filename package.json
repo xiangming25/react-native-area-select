@@ -1,0 +1,35 @@
+{
+  "name": "react-native-area-select",
+  "version": "1.0.0",
+  "description": "a component for react-native to select address level by level",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/xiangming25/react-native-area-select.git"
+  },
+  "keywords": [
+    "react-native-area-select",
+    "area-select"
+  ],
+  "author": "xiangming",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xiangming25/react-native-area-select/issues"
+  },
+  "homepage": "https://github.com/xiangming25/react-native-area-select#readme",
+  "dependencies": {
+    "react": "^16.8.3",
+    "react-native": "0.59.10"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.1.0",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.19.0",
+    "eslint-plugin-react-hooks": "^2.5.1"
+  }
+}
