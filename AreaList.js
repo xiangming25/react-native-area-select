@@ -4,7 +4,7 @@ import { View, Text, FlatList, TouchableOpacity, StyleSheet } from 'react-native
 import { window } from './utils'
 
 const rowHeight = 42
-const footerEmptyHeight = 34
+const footerEmptyHeight = 34 + 22
 class AreaList extends PureComponent {
 
   render() {
@@ -29,7 +29,7 @@ class AreaList extends PureComponent {
   getItemLayout = (data, index) => ({ length: rowHeight, offset: rowHeight * index, index })
 
   renderItem = ({ item, index }) => {
-    const { currentName, handleSelect } = this.props
+    const { currentName, handleSelect, activeColor } = this.props
     const isSelect = currentName === item
     return (
       <TouchableOpacity
@@ -38,7 +38,7 @@ class AreaList extends PureComponent {
         onPress={() => handleSelect(item)}
       >
         <Text style={[styles.itemText, isSelect && styles.selectText]}>{item}</Text>
-        { isSelect && <Text style={styles.selectIcon}>✓</Text> }
+        { isSelect && <Text style={[styles.selectIcon, { color: activeColor }]}>✓</Text> }
       </TouchableOpacity>
     )
   }
@@ -87,8 +87,8 @@ const styles = StyleSheet.create({
     fontFamily: 'PingFangSC-Semibold',
   },
   selectIcon: {
-    fontSize: 12,
-    color: '#007aff',
+    fontSize: 14,
+    fontWeight: 'bold',
   },
   footerRow: {
     height: footerEmptyHeight,

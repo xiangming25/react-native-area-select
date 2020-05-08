@@ -7,7 +7,7 @@ const window = {
 
 const onePt = 1 / PixelRatio.get()
 
-export default {
+export {
   window,
   onePt,
 }

@@ -19,11 +19,13 @@ class index extends PureComponent {
     place: PropTypes.string.isRequired,
     handleSelectSuccess: PropTypes.func.isRequired,
     initShow: PropTypes.bool,
+    activeColor: PropTypes.string,
   }
 
   static defaultProps = {
     initShow: false,
     place: '',
+    activeColor: '#e22d12',
   }
 
   constructor(props) {
@@ -52,8 +54,12 @@ class index extends PureComponent {
         <TouchableOpacity style={{ flex: 1 }} onPress={this.hide} />
         <View style={styles.content}>
           <View style={styles.header}>
-            <Text style={styles.title}>所在地区</Text>
-            <TouchableOpacity style={styles.closeBtn} onPress={this.hide}>
+            <Text style={styles.title}>请选择所在地区</Text>
+            <TouchableOpacity
+              style={styles.closeBtn}
+              onPress={this.hide}
+              hitSlop={{ top: 16, left: 16, bottom: 16, right: 16 }}
+            >
               <Text style={styles.closeText}>✕</Text>
             </TouchableOpacity>
           </View>
@@ -65,6 +71,7 @@ class index extends PureComponent {
   }
 
   renderTabs = () => {
+    const { activeColor } = this.props
     const { currentSelectIndex } = this.state
     // 计算选中tab下划线的位置
     const activityLineLeft = ((oneItemWidth - activityLineWidth) / 2)
@@ -89,7 +96,7 @@ class index extends PureComponent {
             )
           })
         }
-        <View style={[styles.activityLine, { left: activityLineLeft }]} />
+        <View style={[styles.activityLine, { left: activityLineLeft, backgroundColor: activeColor }]} />
       </View>
     )
   }
@@ -135,12 +142,14 @@ class index extends PureComponent {
   getItemLayout = (data, index) => ({ length: window.width, offset: window.width * index, index })
 
   renderItem = ({ item, index }) => {
+    const { activeColor } = this.props
     const { name, selectName, list } = item
     return (
       <AreaList
         key={index}
         areaList={list}
         currentName={selectName}
+        activeColor={activeColor}
         handleSelect={currentName => this.handleSelect(currentName, name, index)}
       />
     )
@@ -280,11 +289,13 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end',
   },
   content: {
-    height: (window.height * 5) / 7,
+    height: (window.height * 2) / 3,
     backgroundColor: '#fff',
+    borderTopLeftRadius: 12,
+    borderTopRightRadius: 12,
   },
   header: {
-    height: 48,
+    height: 56,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
@@ -296,15 +307,20 @@ const styles = StyleSheet.create({
   },
   closeBtn: {
     position: 'absolute',
-    width: 60,
-    height: 48,
+    width: 24,
+    height: 24,
     right: 0,
-    paddingRight: 14,
+    marginRight: 14,
+    borderRadius: 12,
+    backgroundColor: '#f2f2f2',
     justifyContent: 'center',
-    alignItems: 'flex-end',
+    alignItems: 'center',
   },
   closeText: {
-    fontSize: 20,
+    fontSize: 14,
+    textAlign: 'center',
+    color: '#8d8d8d',
+    fontWeight: 'bold',
   },
   tabs: {
     flexDirection: 'row',
@@ -322,14 +338,14 @@ const styles = StyleSheet.create({
     color: '#424244',
   },
   tabTextActivity: {
-    color: '#007aff',
+    color: '#2b2b2b',
+    fontWeight: 'bold',
   },
   activityLine: {
     position: 'absolute',
     bottom: 0,
     width: 36,
     height: 2,
-    backgroundColor: '#007aff',
   },
   allList: {
     flex: 1,
