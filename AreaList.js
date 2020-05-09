@@ -6,15 +6,26 @@ import { window } from './utils'
 const rowHeight = 42
 const footerEmptyHeight = 34 + 22
 class AreaList extends PureComponent {
+  static propTypes = {
+    areaList: PropTypes.arrayOf(PropTypes.string),
+    currentName: PropTypes.string,
+    handleSelect: PropTypes.func,
+    moduleHeight: PropTypes.number,
+  }
+
+  static defaultProps = {
+    areaList: [],
+    currentName: '',
+  }
 
   render() {
-    const { areaList, currentName } = this.props
+    const { areaList, currentName, moduleHeight } = this.props
     let currnetNameIndex = areaList.findIndex(item => item === currentName)
     currnetNameIndex = currnetNameIndex > -1 ? currnetNameIndex : 0
     return (
       <FlatList
         keyExtractor={item => item}
-        style={styles.selectList}
+        style={[styles.selectList, { height: moduleHeight - 88 }]}
         data={areaList}
         initialScrollIndex={currnetNameIndex}
         renderItem={this.renderItem}
@@ -48,22 +59,10 @@ class AreaList extends PureComponent {
   )
 }
 
-AreaList.propTypes = {
-  areaList: PropTypes.arrayOf(PropTypes.string),
-  currentName: PropTypes.string,
-  handleSelect: PropTypes.func,
-}
-
-AreaList.defaultProps = {
-  areaList: [],
-  currentName: '',
-}
-
 const styles = StyleSheet.create({
   selectList: {
     flex: 1,
     width: window.width,
-    height: ((window.height * 5) / 7) - 88,
     paddingVertical: 11,
     opacity: 1,
     zIndex: 99,

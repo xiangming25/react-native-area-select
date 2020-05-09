@@ -2205,7 +2205,7 @@ exec-sh@^0.3.2:
 
 execa@^0.7.0:
   version "0.7.0"
-  resolved "https://registry.npm.taobao.org/execa/download/execa-0.7.0.tgz?cache=0&sync_timestamp=1576749001049&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fexeca%2Fdownload%2Fexeca-0.7.0.tgz#944becd34cc41ee32a63a9faf27ad5a65fc59777"
+  resolved "https://registry.npm.taobao.org/execa/download/execa-0.7.0.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fexeca%2Fdownload%2Fexeca-0.7.0.tgz#944becd34cc41ee32a63a9faf27ad5a65fc59777"
   integrity sha1-lEvs00zEHuMqY6n68nrVpl/Fl3c=
   dependencies:
     cross-spawn "^5.0.1"
@@ -2218,7 +2218,7 @@ execa@^0.7.0:
 
 execa@^1.0.0:
   version "1.0.0"
-  resolved "https://registry.npm.taobao.org/execa/download/execa-1.0.0.tgz?cache=0&sync_timestamp=1576749001049&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fexeca%2Fdownload%2Fexeca-1.0.0.tgz#c6236a5bb4df6d6f15e88e7f017798216749ddd8"
+  resolved "https://registry.npm.taobao.org/execa/download/execa-1.0.0.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fexeca%2Fdownload%2Fexeca-1.0.0.tgz#c6236a5bb4df6d6f15e88e7f017798216749ddd8"
   integrity sha1-xiNqW7TfbW8V6I5/AXeYIWdJ3dg=
   dependencies:
     cross-spawn "^6.0.0"
@@ -2230,9 +2230,9 @@ execa@^1.0.0:
     strip-eof "^1.0.0"
 
 execa@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.npm.taobao.org/execa/download/execa-4.0.0.tgz?cache=0&sync_timestamp=1576749001049&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fexeca%2Fdownload%2Fexeca-4.0.0.tgz#7f37d6ec17f09e6b8fc53288611695b6d12b9daf"
-  integrity sha1-fzfW7BfwnmuPxTKIYRaVttErna8=
+  version "4.0.1"
+  resolved "https://registry.npm.taobao.org/execa/download/execa-4.0.1.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fexeca%2Fdownload%2Fexeca-4.0.1.tgz#988488781f1f0238cd156f7aaede11c3e853b4c1"
+  integrity sha1-mISIeB8fAjjNFW96rt4Rw+hTtME=
   dependencies:
     cross-spawn "^7.0.0"
     get-stream "^5.0.0"
@@ -5008,14 +5008,14 @@ react-is@^16.12.0, react-is@^16.8.1, react-is@^16.8.3:
 
 "react-native-area-select@git+https://github.com/xiangming25/react-native-area-select.git":
   version "1.0.0"
-  resolved "git+https://github.com/xiangming25/react-native-area-select.git#89dc3fec006dfa8e3f9a521fa459d20bec13d595"
+  resolved "git+https://github.com/xiangming25/react-native-area-select.git#f4d0d2fdaa958dc26c4b5842751ff505e2e3292f"
   dependencies:
     react "^16.8.3"
     react-native "0.59.10"
 
 react-native@0.59.10:
   version "0.59.10"
-  resolved "https://registry.npm.taobao.org/react-native/download/react-native-0.59.10.tgz?cache=0&sync_timestamp=1588897504146&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Freact-native%2Fdownload%2Freact-native-0.59.10.tgz#352f381e382f93a0403be499c9e384bf51c2591c"
+  resolved "https://registry.npm.taobao.org/react-native/download/react-native-0.59.10.tgz#352f381e382f93a0403be499c9e384bf51c2591c"
   integrity sha1-NS84Hjgvk6BAO+SZyeOEv1HCWRw=
   dependencies:
     "@babel/runtime" "^7.0.0"
@@ -6027,7 +6027,7 @@ tough-cookie@^3.0.1:
     psl "^1.1.28"
     punycode "^2.1.1"
 
-tr46@^2.0.0:
+tr46@^2.0.2:
   version "2.0.2"
   resolved "https://registry.npm.taobao.org/tr46/download/tr46-2.0.2.tgz#03273586def1595ae08fedb38d7733cee91d2479"
   integrity sha1-Ayc1ht7xWVrgj+2zjXczzukdJHk=
@@ -6289,12 +6289,12 @@ whatwg-mimetype@^2.3.0:
   integrity sha1-PUseAxLSB5h5+Cav8Y2+7KWWD78=
 
 whatwg-url@^8.0.0:
-  version "8.0.0"
-  resolved "https://registry.npm.taobao.org/whatwg-url/download/whatwg-url-8.0.0.tgz#37f256cb746398e19b107bd6ef820b4ae2d15871"
-  integrity sha1-N/JWy3RjmOGbEHvW74ILSuLRWHE=
+  version "8.1.0"
+  resolved "https://registry.npm.taobao.org/whatwg-url/download/whatwg-url-8.1.0.tgz?cache=0&sync_timestamp=1588965133257&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fwhatwg-url%2Fdownload%2Fwhatwg-url-8.1.0.tgz#c628acdcf45b82274ce7281ee31dd3c839791771"
+  integrity sha1-xiis3PRbgidM5yge4x3TyDl5F3E=
   dependencies:
     lodash.sortby "^4.7.0"
-    tr46 "^2.0.0"
+    tr46 "^2.0.2"
     webidl-conversions "^5.0.0"
 
 which-module@^2.0.0:

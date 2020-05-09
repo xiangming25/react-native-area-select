@@ -30,14 +30,14 @@ export default class App extends Component {
     return (
       <View style={styles.container}>
         <TouchableOpacity style={styles.btn} onPress={this.openAreaSelect}>
-          <Text style={styles.btnText}>{place || '请选择'}</Text>
+          <Text style={styles.btnText}>{place || '请选择所在地区'}</Text>
         </TouchableOpacity>
         <AreaSelect
           ref={refs => (this.areaSelectRef = refs)}
           initShow={false}
           place={place}
           activeColor="#f11c0a"
-          handleSelectSuccess={this.handleSelectSuccess}
+          onFinished={this.handleSelectSuccess}
         />
       </View>
     );
@@ -47,8 +47,8 @@ export default class App extends Component {
     this.areaSelectRef && this.areaSelectRef.show()
   }
 
-  handleSelectSuccess = (areaArr) => {
-    this.setState({ place: areaArr.join(' ') })
+  handleSelectSuccess = (newPlace) => {
+    this.setState({ place: newPlace })
   }
 }
 

@@ -1,7 +1,6 @@
 /**
  * 地址选择器组件
  * 数据参考地址
- * https://download.csdn.net/download/qq_20343517/10437301?utm_source=bbsseo
  * https://github.com/modood/Administrative-divisions-of-China
  */
 import React, { PureComponent } from 'react'
@@ -17,15 +16,17 @@ const oneItemWidth = window.width / 4
 class index extends PureComponent {
   static propTypes = {
     place: PropTypes.string.isRequired,
-    handleSelectSuccess: PropTypes.func.isRequired,
     initShow: PropTypes.bool,
     activeColor: PropTypes.string,
+    moduleHeight: PropTypes.number,
+    onFinished: PropTypes.func.isRequired,
   }
 
   static defaultProps = {
-    initShow: false,
     place: '',
+    initShow: false,
     activeColor: '#e22d12',
+    moduleHeight: (window.height * 5) / 7,
   }
 
   constructor(props) {
@@ -48,11 +49,12 @@ class index extends PureComponent {
   }
 
   render() {
+    const { moduleHeight } = this.props
     const { containerBottom } = this.state
     return (
       <View style={[styles.container, { bottom: containerBottom }]}>
         <TouchableOpacity style={{ flex: 1 }} onPress={this.hide} />
-        <View style={styles.content}>
+        <View style={[styles.content, { height: moduleHeight }]}>
           <View style={styles.header}>
             <Text style={styles.title}>请选择所在地区</Text>
             <TouchableOpacity
@@ -142,7 +144,7 @@ class index extends PureComponent {
   getItemLayout = (data, index) => ({ length: window.width, offset: window.width * index, index })
 
   renderItem = ({ item, index }) => {
-    const { activeColor } = this.props
+    const { activeColor, moduleHeight } = this.props
     const { name, selectName, list } = item
     return (
       <AreaList
@@ -150,6 +152,7 @@ class index extends PureComponent {
         areaList={list}
         currentName={selectName}
         activeColor={activeColor}
+        moduleHeight={moduleHeight}
         handleSelect={currentName => this.handleSelect(currentName, name, index)}
       />
     )
@@ -157,7 +160,7 @@ class index extends PureComponent {
 
   handleSelect = (currentName, name, currentIndex) => {
     const { areaData } = this.state
-    const { handleSelectSuccess } = this.props
+    const { onFinished } = this.props
     const newList = this.getNewList(currentName, currentIndex)
 
     const newAreaData = areaData.map((item, index) => {
@@ -183,7 +186,7 @@ class index extends PureComponent {
     if (!hasChildList) {
       const areaArr = newAreaData.filter(item => Boolean(item.selectName))
         .map(item => item.selectName)
-      handleSelectSuccess(areaArr)
+      onFinished(areaArr.join(' '))
       this.hide()
     }
   }
@@ -289,7 +292,6 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end',
   },
   content: {
-    height: (window.height * 2) / 3,
     backgroundColor: '#fff',
     borderTopLeftRadius: 12,
     borderTopRightRadius: 12,
@@ -311,8 +313,6 @@ const styles = StyleSheet.create({
     height: 24,
     right: 0,
     marginRight: 14,
-    borderRadius: 12,
-    backgroundColor: '#f2f2f2',
     justifyContent: 'center',
     alignItems: 'center',
   },
